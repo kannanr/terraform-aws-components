@@ -124,7 +124,7 @@ resource "kubernetes_namespace" "default" {
 
 module "datadog_agent" {
   source  = "cloudposse/helm-release/aws"
-  version = "0.7.0"
+  version = "0.9.1"
 
   name                 = module.this.name
   chart                = var.chart

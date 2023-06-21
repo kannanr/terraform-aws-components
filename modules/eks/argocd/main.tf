@@ -189,7 +189,7 @@ resource "kubernetes_secret" "oidc_gsuite_service_account" {
 
 module "argocd" {
   source  = "cloudposse/helm-release/aws"
-  version = "0.11.0"
+  version = "0.9.1"
 
   name                   = "argocd" # avoids hitting length restrictions on IAM Role names
   chart                  = var.chart
@@ -303,7 +303,7 @@ module "argocd_apps" {
   count = local.enabled && var.argocd_apps_enabled ? 1 : 0
 
   source  = "cloudposse/helm-release/aws"
-  version = "0.11.0"
+  version = "0.9.1"
 
   name                 = "" # avoids hitting length restrictions on IAM Role names
   chart                = var.argocd_apps_chart

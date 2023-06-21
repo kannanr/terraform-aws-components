@@ -6,7 +6,7 @@ locals {
 
 module "echo_server" {
   source  = "cloudposse/helm-release/aws"
-  version = "0.7.0"
+  version = "0.9.1"
 
   name  = module.this.name
   chart = "${path.module}/charts/echo-server"
