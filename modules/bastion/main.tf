@@ -32,7 +32,7 @@ locals {
 
 module "sg" {
   source  = "cloudposse/security-group/aws"
-  version = "2.0.0"
+  version = "2.2.0"
 
   rules  = var.security_group_rules
   vpc_id = local.vpc_id
@@ -91,7 +91,7 @@ data "aws_ami" "bastion_image" {
 
 module "bastion_autoscale_group" {
   source  = "cloudposse/ec2-autoscale-group/aws"
-  version = "0.30.1"
+  version = "0.34.2"
 
   image_id                    = join("", data.aws_ami.bastion_image.*.id)
   instance_type               = var.instance_type
